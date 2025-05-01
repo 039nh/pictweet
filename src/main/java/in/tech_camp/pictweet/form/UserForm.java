@@ -27,7 +27,7 @@ public class UserForm {
 
   public void validatePasswordConfirmation(BindingResult result) {
     if (!password.equals(passwordConfirmation)) {
-      result.rejectValue("passwwordConfirmation", null, "Password confirmation doesn't match Password");
+      result.rejectValue("passwordConfirmation", "error.user", "Password confirmation doesn't match Password");
     }
   }
 }

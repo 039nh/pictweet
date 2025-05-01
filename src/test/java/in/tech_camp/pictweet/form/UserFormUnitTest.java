@@ -73,7 +73,7 @@ class ユーザー作成ができない場合 {
     @Test
     public void passwordとpasswordConfirmationが不一致ではバリデーションエラーが発生する() {
       //  異なるパスワードを設定
-      userForm.setPasswordConfirmation("differentPassword"); // インスタンスデータを用意
+      userForm.setPasswordConfirmation("differentPassword");
       //  バリデーションメソッドを呼び出す
       userForm.validatePasswordConfirmation(bindingResult);
       //  結果とエラーメッセージの一致を確認

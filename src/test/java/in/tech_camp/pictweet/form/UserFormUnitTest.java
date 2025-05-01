@@ -82,7 +82,7 @@ class ユーザー作成ができない場合 {
 
     @Test
     public void nicknameが7文字以上ではバリデーションエラーが発生する() {
-      userForm.setNickname("exampleNickname");
+      userForm.setNickname("TooLong");
       Set<ConstraintViolation<UserForm>> violations = validator.validate(userForm, ValidationPriority2.class);
       assertEquals(1, violations.size());
       assertEquals("Nickname is too long (maximum is 6 characters)", violations.iterator().next().getMessage());
@@ -93,7 +93,7 @@ class ユーザー作成ができない場合 {
       userForm.setEmail("invalidEmail"); // 無効なメール
       Set<ConstraintViolation<UserForm>> violations = validator.validate(userForm, ValidationPriority2.class);
       assertEquals(1, violations.size());
-      assertEquals("NEmail should be valid", violations.iterator().next().getMessage());
+      assertEquals("Email should be valid", violations.iterator().next().getMessage());
     }
 
     @Test
